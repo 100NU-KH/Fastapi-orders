@@ -1,0 +1,9 @@
+.order.db
+__pycache__
+./.env/*
+./.env
+
+./static
+./README.md
+./.git
+./.gitignore

@@ -5,7 +5,19 @@ Conditional offer on product based on count in bucket(user input)
 > - Sqlite DB is used  
 > - Present in repository itself
 > - More products, conditionalOffer can be added via the `create product`, `Conditions`, `Benefits`.  
-> Scope of the functionality can be improved by expending the logic from `Count` refrenced fixed-amount discount to percentage or fixed-amount discount on sub-total of a product in the basket
+> Scope of the functionality can be improved by expending the logic from `Count` refrenced fixed-amount discount to percentage or fixed-amount discount on sub-total of a product in the basket  
+
+### Running container instance of application
+Create docker image of application  
+
+```
+> docker build -t orders:v1 .
+``` 
+
+> [!TIP]  
+> Run the build command in the directory containing the `Dockerfile` or provide the file path using the `-f` argument.
+
+
 
 ### How to run the application
 
@@ -34,7 +46,7 @@ Conditional offer on product based on count in bucket(user input)
 
 ### Steps to validate the functionality
 
-- On any browse open the following url to open FastApi's swagger docs   
+- On any browser open the following url to open FastApi's swagger docs   
 http://localhost:8000/docs
 
 - In the basket section use the `Calculate basket price` API to test the functionality.
