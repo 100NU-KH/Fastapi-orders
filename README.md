@@ -19,7 +19,7 @@ Conditional offer on product based on count in bucket(user input)
 
 - Create the application container instance
 ```
-> docker run -d -p 8000:8000 orders:v1 /bin/sh
+> docker run -d -p 8000:8000 orders:v1
 ```
 
 Application instance will be up and running and can be accessed at
