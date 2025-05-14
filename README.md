@@ -4,6 +4,8 @@ Conditional offer on product based on count in bucket(user input)
 > [!NOTE]  
 > - Sqlite DB is used  
 > - Present in repository itself
+> - More products, conditionalOffer can be added via the `create product`, `Conditions`, `Benefits`.  
+> Scope of the functionality can be improved by expending the logic from `Count` refrenced fixed-amount discount to percentage or fixed-amount discount on sub-total of a product in the basket
 
 ### How to run the application
 
