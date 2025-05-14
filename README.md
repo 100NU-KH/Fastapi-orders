@@ -1,6 +1,10 @@
 # Fastapi-orders
 Conditional offer on product based on count in bucket(user input)
 
+> [!NOTE]  
+> - Sqlite DB is used  
+> - Present in repository itself
+
 ### How to run the application
 
 - Run the following command to create a VirtualEnv  
