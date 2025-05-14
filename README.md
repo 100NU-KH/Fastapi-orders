@@ -22,7 +22,7 @@ Conditional offer on product based on count in bucket(user input)
 > docker run -d -p 8000:8000 orders:v1 /bin/sh
 ```
 
-Application instance is will be up and running and can be accessed at
+Application instance will be up and running and can be accessed at
 http://localhost:8000/docs
 
 ### How to run the application
