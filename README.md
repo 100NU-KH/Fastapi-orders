@@ -8,16 +8,22 @@ Conditional offer on product based on count in bucket(user input)
 > Scope of the functionality can be improved by expending the logic from `Count` refrenced fixed-amount discount to percentage or fixed-amount discount on sub-total of a product in the basket  
 
 ### Running container instance of application
-Create docker image of application  
+- Create docker image of application  
 
 ```
 > docker build -t orders:v1 .
 ``` 
 
 > [!TIP]  
-> Run the build command in the directory containing the `Dockerfile` or provide the file path using the `-f` argument.
+> Run the build command in the directory containing the `Dockerfile` or provide the file path using the `-f` argument.  
 
+- Create the application container instance
+```
+> docker run -d -p 8000:8000 orders:v1 /bin/sh
+```
 
+Application instance is will be up and running and can be accessed at
+http://localhost:8000/docs
 
 ### How to run the application
 
