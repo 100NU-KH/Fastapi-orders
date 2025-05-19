@@ -1,10 +1,10 @@
 from sqlalchemy import create_engine, Column, Integer, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.sql.schema import MetaData
 
 
-class BaseModel(declarative_base()):
-    __abstract__ = True
+class BaseModel:
     
     id = Column(Integer, primary_key=True, index=True)
     is_active = Column(Boolean, default=True)

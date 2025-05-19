@@ -3,7 +3,8 @@ from sqlalchemy.orm import Session
 
 from typing import List
 from database import get_db
-from models import Products
+from models.products import Products
+from models.conditional_offers import ConditionalOffers
 from schemas import CreateProduct
 from schemas.products import ProductDetails
 
@@ -22,9 +23,13 @@ def get_all_products(db: Session = Depends(get_db)):
 def create_product(request: CreateProduct, db: Session = Depends(get_db)):
     new_product = Products(
         name=request.name,
-        price=request.price,
-        conditional_offer_id=request.conditional_offer_id
+        price=request.price
     )
+    if request.conditional_offer_ids:
+        for conditional_offer_id in request.conditional_offer_ids:
+            conditional_off_obj = db.query(ConditionalOffers).filter(ConditionalOffers.id==conditional_offer_id).first()
+            if conditional_off_obj:
+                new_product.conditional_offers.append(conditional_off_obj)
     db.add(new_product)
     db.commit()
     db.refresh(new_product)

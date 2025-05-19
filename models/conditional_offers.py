@@ -1,9 +1,12 @@
 from database import Base
 
+import models.products
 from sqlalchemy import Enum
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, Mapped
 from sqlalchemy import Column, Integer, String, ForeignKey, Float
 
+from typing import List
+import models
 from enums import ConditionalOfferStatus, ConditionType, BenefitType
 
 
@@ -37,7 +40,7 @@ class ConditionalOffers(Base):
     
     condition = relationship('Conditions', back_populates='offer')
     
-    products = relationship('Products', back_populates='conditional_offer')
+    products = relationship('Products', secondary='products_condition_off_m2m_link', back_populates="conditional_offers")
     
     benifit = relationship('Benefits', back_populates='offer')
     
